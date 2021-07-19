@@ -1,0 +1,14 @@
+.vscode/
+dist/
+node_modules/
+example/public/
+example/.wordpress-graphql-cache/
+example/.cache/
+example/public/
+example/node_modules/
+example/gatsby-config.js
+src/graphql/codegen.js
+.DS_Store
+*.log
+.cache
+.inc-builds

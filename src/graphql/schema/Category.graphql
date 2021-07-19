@@ -1,0 +1,24 @@
+fragment CategorySeoData on TaxonomySEO {
+  title
+  canonical
+  metaDesc
+  metaKeywords
+  metaRobotsNofollow
+  metaRobotsNoindex
+  opengraphImage { id }
+}
+
+fragment CategoryData on Category {
+  id
+  name
+  slug
+  description
+  seo { ...CategorySeoData }
+}
+
+query GetCategorys($before: String, $last: Int) {
+  categories(before: $before, last: $last) {
+    nodes { ...CategoryData }
+    pageInfo { startCursor, hasPreviousPage }
+  }
+}

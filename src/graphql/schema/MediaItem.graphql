@@ -1,0 +1,17 @@
+fragment MediaItemData on MediaItem {
+  id
+  title
+  altText
+  slug
+  fileSize
+  mimeType
+  sourceUrl
+  mediaDetails { height, width }
+}
+
+query GetMediaItems($before: String, $last: Int) {
+  mediaItems(before: $before, last: $last) {
+    nodes { ...MediaItemData }
+    pageInfo { startCursor, hasPreviousPage }
+  }
+}

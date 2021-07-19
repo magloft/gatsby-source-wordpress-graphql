@@ -1,0 +1,29 @@
+fragment SeoData on PostTypeSEO {
+  title
+  canonical
+  metaDesc
+  metaKeywords
+  metaRobotsNofollow
+  metaRobotsNoindex
+  opengraphImage { id }
+}
+
+fragment PostData on Post {
+  id
+  title
+  slug
+  date
+  excerpt(format: RENDERED)
+  content(format: RENDERED)
+  featuredImage { node { id } }
+  authorId
+  categories { nodes { id } }
+  seo { ...SeoData }
+}
+
+query GetPosts($before: String, $last: Int) {
+  posts(where: { status: PUBLISH }, before: $before, last: $last) {
+    nodes { ...PostData }
+    pageInfo { startCursor, hasPreviousPage }
+  }
+}

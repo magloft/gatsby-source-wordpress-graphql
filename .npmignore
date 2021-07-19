@@ -1,0 +1,13 @@
+.vscode/
+src/
+example/
+dist/graphql/codegen.js
+dist/graphql/codegen.js.map
+node_modules/
+.babelrc.js
+.gitignore
+.eslintignore
+.eslintrc.js
+tsconfig.json
+*.log
+yarn.lock

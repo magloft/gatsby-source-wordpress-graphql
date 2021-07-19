@@ -1,0 +1,15 @@
+fragment UserData on User {
+  id
+  email
+  firstName
+  lastName
+  description
+  avatar(size: 512) { url, height, width }
+}
+
+query GetUsers($before: String, $last: Int) {
+  users(before: $before, last: $last) {
+    nodes { ...UserData }
+    pageInfo { startCursor, hasPreviousPage }
+  }
+}

@@ -1,0 +1,27 @@
+fragment SeoData on PostTypeSEO {
+  title
+  canonical
+  metaDesc
+  metaKeywords
+  metaRobotsNofollow
+  metaRobotsNoindex
+  opengraphImage { id }
+}
+
+fragment PageData on Page {
+  id
+  title
+  slug
+  date
+  content(format: RENDERED)
+  featuredImage { node { id } }
+  authorId
+  seo { ...SeoData }
+}
+
+query GetPages($before: String, $last: Int) {
+  pages(where: { status: PUBLISH }, before: $before, last: $last) {
+    nodes { ...PageData }
+    pageInfo { startCursor, hasPreviousPage }
+  }
+}

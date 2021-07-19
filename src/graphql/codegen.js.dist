@@ -1,0 +1,12 @@
+module.exports = {
+  overwrite: true,
+  schema: {
+    'https://www.domain.com/graphql': { headers: { Authorization: 'Basic ...' } }
+  },
+  documents: 'src/graphql/schema/*.graphql',
+  generates: {
+    'src/graphql/index.ts': {
+      plugins: ['typescript', 'typescript-operations', 'typed-document-node']
+    }
+  }
+}
