@@ -48,6 +48,7 @@ export class MediaItemImporter {
     }
     const buffer = await this.cache.adapter.file(mediaItem.sourceUrl)
     const result = await fileType.fromBuffer(buffer)
+    if (!result) { return null }
     const ext = result?.ext ?? 'jpg'
     return createFileNodeFromBuffer({ buffer, store, cache, createNode, createNodeId, parentNodeId: mediaItem.id, ext: `.${ext}`, name })
   }
