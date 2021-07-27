@@ -3,7 +3,7 @@
   "description": "Source data from Wordpress in an efficient and scalable way.",
   "author": "Tobias Strebitzer <tobias.strebitzer@magloft.com>",
   "main": "index.js",
-  "version": "3.0.0-next.5",
+  "version": "3.0.0-next.6",
   "bugs": {
     "url": "https://github.com/magloft/gatsby-source-wordpress-graphql/issues"
   },
