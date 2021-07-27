@@ -47,7 +47,8 @@ export class MediaItemImporter {
       return createRemoteFileNode({ url: encodeURI(mediaItem.sourceUrl), name, cache, store, reporter, createNode, createNodeId, parentNodeId: mediaItem.id })
     }
     const buffer = await this.cache.adapter.file(mediaItem.sourceUrl)
-    const { ext } = await fileType.fromBuffer(buffer)
+    const result = await fileType.fromBuffer(buffer)
+    const ext = result?.ext ?? 'jpg'
     return createFileNodeFromBuffer({ buffer, store, cache, createNode, createNodeId, parentNodeId: mediaItem.id, ext: `.${ext}`, name })
   }
 }
