@@ -39,3 +39,10 @@ Configure Plugin Options:
   }
 }
 ```
+
+## Development
+
+1. Build plugin using `yarn build`
+2. Run `yarn link` in `dist/` folder
+3. Run `yarn link gatsby-source-wordpress-graphql` in `example/` folder
+4. Create `gatsby-config.js` in `example` folder (based on `dist` file) and fill in `authorization` details
