@@ -30,7 +30,10 @@ export class MediaItemImporter {
     const fileNodes = await Promise.all<NodeInput | null>(mediaItems.map(async (mediaItem) => {
       await sema.acquire()
       const fileNode = await this.importMediaItem(mediaItem)
-      if (!fileNode) { return null }
+      if (!fileNode) {
+        sema.release()
+        return null
+      }
       mediaItem.data.file = fileNode.id
       progress.tick()
       sema.release()
