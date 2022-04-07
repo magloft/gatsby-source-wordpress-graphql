@@ -6,7 +6,6 @@ module.exports = {
       resolve: 'gatsby-source-wordpress-graphql',
       options: { host: 'https://www.domain.com/graphql', authorization: 'Basic ...', cacheAdapter: 'persist' }
     },
-    { resolve: 'gatsby-source-filesystem', options: { name: 'images', path: `${__dirname}/src/images` } },
     { resolve: 'gatsby-plugin-sass' },
     { resolve: 'gatsby-plugin-image' },
     { resolve: 'gatsby-plugin-sharp' },

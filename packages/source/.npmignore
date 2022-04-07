@@ -1,0 +1,8 @@
+src/
+build/graphql/codegen.js
+build/graphql/codegen.js.map
+node_modules/
+.babelrc.js
+tsconfig.json
+*.log
+yarn.lock

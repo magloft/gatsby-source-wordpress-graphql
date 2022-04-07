@@ -16,7 +16,7 @@ export const query = graphql`
         content { html, mediaItems { id, title, altText, file { childImageSharp { gatsbyImageData(width: 688) } } } }
       }
     }
-    sitePlugin(name: { eq: "gatsby-source-wordpress-graphql" }) { pluginOptions { host } }
+    sitePlugin(name: { eq: "gatsby-source-wordpress-graphql" }) { pluginOptions }
   }`
 
 const IndexPage = (params) => {
